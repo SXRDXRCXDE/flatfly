@@ -19,7 +19,7 @@ export default function Header() {
     const pathname = location.pathname;
     const isSearchPage = pathname !== "/";
     const { language, setLanguage, t } = useLanguage();
-    const { isAuthenticated, user, logout } = useAuth();
+    const { isAuthenticated, logout } = useAuth();
     
     // Страницы с объявлениями
     const listingPages = ["/apartments", "/rooms", "/neighbours"];
@@ -37,11 +37,7 @@ export default function Header() {
         { title: t("header.apartments"), path: "/apartments" },
     ];
 
-    const menuItems = [
-        ...menuItemsColumn1,
-        ...menuItemsColumn2,
-        { title: t("header.addListing"), path: "/add" },
-    ];
+    // menuItems объединены из menuItemsColumn1 и menuItemsColumn2, используется в отдельных местах
 
     const languages = [
         { code: "cz" as const, label: "CZ" },

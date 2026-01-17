@@ -1,4 +1,5 @@
-import { useState, useRef, ChangeEvent } from "react";
+import { useState, useRef } from "react";
+import type { ChangeEvent } from "react";
 import { User, Camera, Save, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Icon } from "@iconify/react";
 import {useLanguage} from "../../contexts/LanguageContext";

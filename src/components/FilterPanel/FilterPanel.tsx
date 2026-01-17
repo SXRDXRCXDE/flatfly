@@ -1,6 +1,6 @@
 import {Icon} from "@iconify/react";
 import {useState, useRef, useEffect} from "react";
-import {X, ChevronDown} from "lucide-react";
+import {X} from "lucide-react";
 import {useLanguage} from "../../contexts/LanguageContext";
 
 interface FilterState {

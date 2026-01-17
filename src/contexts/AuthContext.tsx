@@ -1,6 +1,5 @@
-"use client";
-
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import type { ReactNode } from "react";
 
 interface AuthContextType {
     isAuthenticated: boolean;
@@ -14,10 +13,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState<{ email: string; name: string } | null>(null);
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
         if (typeof window !== "undefined") {
             // Проверяем localStorage при загрузке
             const savedAuth = localStorage.getItem("isAuthenticated");
